@@ -8,6 +8,7 @@ export default {
       title: "Caption",
       type: "string",
     },
+
     {
       name: "video",
       title: "Video",
