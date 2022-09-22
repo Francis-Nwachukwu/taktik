@@ -37,15 +37,18 @@ const Comments = ({
   }, [comments]);
 
   return (
-    <div className="border-t-2 border-gray-200 pt-4 px-10 mt-4 bg-[#F8F8F8] border-b-2 lg:pb-0 pb-[100px]">
-      <div className="overflow-scroll lg:h-[457px]">
+    <div className="border-t-2 border-gray-200 pt-4 mt-4  bg-[#F8F8F8] border-b-2 lg:pb-0">
+      <div className="overflow-scroll h-[430px]">
         {comments?.length > 0 ? (
           comments?.map((item: IComment, idx: number) => (
-            <>
+            <div className="lg:px-10 px-5">
               {allUsers?.map(
                 (user: IUser) =>
                   user._id === (item.postedBy._ref || item.postedBy._id) && (
-                    <div className="p-2 items-center" key={idx}>
+                    <div
+                      className="p-2 my-2 items-center bg-primary rounded-full"
+                      key={idx}
+                    >
                       <Link href={`/profile/${user._id}`}>
                         <div className="flex items-start gap-3">
                           <div className="w-12 h-12">
@@ -66,22 +69,23 @@ const Comments = ({
                         </div>
                       </Link>
                       <div>
-                        <p className="-mt-5 ml-16 text-[16px] mr-8">
+                        <p className="-mt-5 ml-16 text-[16px] mr-8 ">
                           {item.comment}
                         </p>
                       </div>
                     </div>
                   )
               )}
-            </>
+            </div>
           ))
         ) : (
           <NoResults text="No Comments Yet. Be First to do add the comment." />
         )}
       </div>
-      {userProfile ? (
-        <div className="absolute bottom-0 left-0  pb-6 px-2 md:px-10 ">
-          <form onSubmit={addComment} className="flex gap-4">
+
+      <div className=" w-full border-t-2 border-gray-200 pb-4 px-2 bg-white md:px-10 ">
+        {userProfile ? (
+          <form onSubmit={addComment} className="flex py-1 gap-4">
             <input
               value={comment}
               onChange={(e) => setComment(e.target.value)}
@@ -92,12 +96,12 @@ const Comments = ({
               {isPostingComment ? "Commenting..." : "Comment"}
             </button>
           </form>
-        </div>
-      ) : (
-        <p className=" text-sm text-gray-600">
-          Login to be able to comment on videos.
-        </p>
-      )}
+        ) : (
+          <p className=" text-md font-bold text-gray-600">
+            Login to be able to comment on videos.
+          </p>
+        )}
+      </div>
     </div>
   );
 };

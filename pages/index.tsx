@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import axios from "axios";
+import { useRouter } from "next/router";
 import Head from "next/head";
 import Image from "next/image";
 
@@ -13,8 +14,18 @@ interface IProps {
 }
 
 const Home = ({ videos }: IProps) => {
+  const router = useRouter();
+  const { topic } = router.query;
+
   return (
     <div className="flex flex-col gap-10 videos h-full">
+      {topic && (
+        <div>
+          <p className="font-bold capitalize text-gray-600 text-sm">
+            Showing result for topic "{topic}"{" "}
+          </p>
+        </div>
+      )}
       {videos.length ? (
         videos.map((video) => <VideoCard post={video} key={video._id} />)
       ) : (

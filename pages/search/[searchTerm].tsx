@@ -26,6 +26,14 @@ const Search = ({ videos }: { videos: Video[] }) => {
 
   return (
     <div className="w-full">
+      {searchTerm && (
+        <div>
+          <p className="font-bold capitalize text-gray-600 text-sm">
+            Showing search result for "{searchTerm}"{" "}
+          </p>
+        </div>
+      )}
+
       <div className="flex gap-10 mb-10 border-b-2 border-gray-200 md:fixed z-50 bg-white w-full">
         <p
           onClick={() => setIsAccounts(true)}

@@ -145,7 +145,7 @@ const Detail = ({ postDetails }: IProps) => {
                 handleDislike={() => handleLike(false)}
               />
             ) : (
-              <p className=" text-sm text-gray-600">
+              <p className=" text-md font-bold text-gray-600">
                 Login to be able to Like videos
               </p>
             )}

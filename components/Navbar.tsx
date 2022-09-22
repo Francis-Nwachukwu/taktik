@@ -29,6 +29,7 @@ const Navbar = () => {
     if (searchvalue) {
       router.push(`/search/${searchvalue}`);
     }
+    setSearchvalue("");
   };
 
   return (
@@ -43,10 +44,10 @@ const Navbar = () => {
           />
         </div>
       </Link>
-      <div className="relative hidden md:block">
+      <div className="relative">
         <form
           onSubmit={handleSearch}
-          className=" md:static top-10 -left-20 bg-white "
+          className="absolute md:static top-10 -left-20 bg-white "
         >
           <input
             type="text"
