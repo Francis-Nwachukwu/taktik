@@ -22,7 +22,7 @@ const Home = ({ videos }: IProps) => {
       {topic && (
         <div>
           <p className="font-bold capitalize text-gray-600 text-sm">
-            Showing result for topic "{topic}"
+            Showing result for topic &quot;{topic}&quot;
           </p>
         </div>
       )}

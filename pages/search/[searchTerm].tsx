@@ -29,7 +29,7 @@ const Search = ({ videos }: { videos: Video[] }) => {
       {searchTerm && (
         <div>
           <p className="font-bold capitalize text-gray-600 text-sm">
-            Showing search result for "{searchTerm}"
+            Showing search result for &quot;{searchTerm}&quot;
           </p>
         </div>
       )}
