@@ -1,3 +1,4 @@
 [build.environment]
   NEXT_PUBLIC_SANITY_TOKEN = "skXgoQPwEaP7WWO7heMzom0htjWAoCAhQAwuaB5NxfdFQmb2GrD1QrpoHXpHP5TbryflDRjyU43WuRuWguWR6ZNBJ268TY9KFm6KbHQCl4OgbuXx5eQESrmpsUa1yGQXzieJEyXR4Nqal4SEZzbgAUsx7w2mVJqzhck6O2bxwq5mzu9i1zBg"
   NEXT_PUBLIC_GOOGLE_API_TOKEN = "711377767788-0kmhlc6lcbelame9mst0kc4699thbgb2.apps.googleusercontent.com"
+  NEXT_PUBLIC_BASE_URL = https://taktik.netlify.app/
